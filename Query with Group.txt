@@ -1,0 +1,35 @@
+es.1
+
+SELECT YEAR(`enrolment_date`) AS `Anno`, COUNT(`id`) AS `NumeroIscritti`
+FROM `students`
+GROUP BY `Anno`
+ORDER BY `Anno` ASC;
+
+
+es.2
+
+SELECT office_number, COUNT(`id`) AS `NumeroInsegnanti`
+FROM `teachers`
+GROUP BY office_number
+HAVING COUNT(id) > 1;
+
+
+es.3
+
+SELECT degree_id, AVG(cfu) AS MediaCFU
+FROM courses
+GROUP BY degree_id;
+
+
+es.4
+
+SELECT degree_id, AVG(cfu) AS MediaCFU
+FROM courses
+GROUP BY degree_id;
+
+
+es.5
+
+SELECT department_id, COUNT(`name`) AS CorsiDiLaurea
+FROM degrees
+GROUP BY department_id;
